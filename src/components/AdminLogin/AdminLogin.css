@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
+
+.login-message {
+  color: #cc9933;
+  margin-bottom: 15px;
+  text-align: center;
+  font-family: 'Bespoke', serif;
+  font-size: 1.2rem;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards 0.5s;
+}
+
+.admin-login-container {
+  min-height: 100vh;
+  background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(204,153,51,0.05) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.art-border {
+  position: absolute;
+  background: linear-gradient(90deg, transparent, #cc9933, transparent);
+  opacity: 0.15;
+  transition: opacity 0.3s ease;
+}
+
+.admin-login-container:hover .art-border {
+  opacity: 0.25;
+}
+
+.art-border.top, .art-border.bottom {
+  height: 1px;
+  width: calc(100% - 40px);
+  left: 20px;
+  transform: scaleX(0);
+  animation: expandWidth 1.5s ease forwards;
+}
+
+.art-border.left, .art-border.right {
+  width: 1px;
+  height: calc(100% - 40px);
+  top: 20px;
+}
+
+.art-border.top { top: 20px; }
+.art-border.bottom { bottom: 20px; }
+.art-border.left { left: 20px; }
+.art-border.right { right: 20px; }
+
+.corner-art {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #cc9933;
+  opacity: 0.3;
+}
+
+.corner-art.top-left {
+  top: 10px;
+  left: 10px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.corner-art.top-right {
+  top: 10px;
+  right: 10px;
+  border-left: none;
+  border-bottom: none;
+}
+
+.corner-art.bottom-left {
+  bottom: 10px;
+  left: 10px;
+  border-right: none;
+  border-top: none;
+}
+
+.corner-art.bottom-right {
+  bottom: 10px;
+  right: 10px;
+  border-left: none;
+  border-top: none;
+}
+
+.login-form-section {
+  text-align: center;
+  max-width: 400px;
+  padding: 3rem;
+  position: relative;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 2px;
+  box-shadow: 0 0 40px rgba(204,153,51,0.05);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards 0.5s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-form-section h1 {
+  color: #cc9933;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Bespoke', serif;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+
+.login-form .form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.login-form label {
+  display: block;
+  color: #cc9933;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-family: 'Bespoke', serif;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.login-form label:hover {
+  opacity: 1;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cc9933;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 3px;
+  color: #333;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #b3862b;
+  box-shadow: 0 0 10px rgba(204,153,51,0.1);
+}
+
+.login-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #cc9933;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-family: 'Bespoke', serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-button:hover {
+  background-color: #b3862b;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 10px rgba(204,153,51,0.2);
+}
+
+.decorative-line {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #cc9933, transparent);
+  margin: 2rem auto;
+  width: 60%;
+  opacity: 0;
+  transform: scaleX(0);
+  animation: expandWidth 1.5s ease forwards 1s;
+}
+
+@keyframes expandWidth {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

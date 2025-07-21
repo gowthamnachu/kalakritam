@@ -1,0 +1,323 @@
+.dashboard-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: linear-gradient(45deg, rgba(255,255,255,0.9) 0%, rgba(204,153,51,0.1) 100%);
+  backdrop-filter: blur(5px);
+  border-bottom: 1px solid rgba(204,153,51,0.3);
+}
+
+.header-left,
+.header-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-width: 180px;
+}
+
+.header-left {
+  justify-content: flex-start;
+  padding-left: 20px;
+}
+
+.header-right {
+  justify-content: flex-end;
+  padding-right: 20px;
+  gap: 15px;
+}
+
+.header-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.header-center-menu {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-dropdown {
+  position: relative;
+}
+
+.menu-button {
+  background-color: #cc9933;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9em;
+  font-family: 'Cormorant Garamond', serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.menu-button:hover {
+  background-color: #b3862b;
+  transform: translateY(-1px);
+}
+
+.menu-content {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  min-width: 180px;
+  box-shadow: 0 4px 15px rgba(204,153,51,0.15);
+  border-radius: 5px;
+  z-index: 1000;
+  margin-top: 5px;
+  animation: fadeIn 0.2s ease-in-out;
+  border: 1px solid rgba(204,153,51,0.1);
+}
+
+.menu-item {
+  color: #cc9933;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  transition: background-color 0.3s;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.menu-item:hover {
+  background-color: rgba(204,153,51,0.1);
+}
+
+.menu-content::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid white;
+}
+
+.small-logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+.kalakritam-logo {
+  height: 65px;
+  max-width: 250px;
+  object-fit: contain;
+}
+
+.admin-controls, .user-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: auto;
+  height: 100%;
+}
+
+.arts-dropdown, .menu-dropdown {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.arts-dropdown-button {
+  background-color: #cc9933;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9em;
+  font-family: 'Cormorant Garamond', serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.arts-dropdown-button:hover {
+  background-color: #b3862b;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0 2px 10px rgba(204,153,51,0.1);
+  border-radius: 5px;
+  z-index: 1000;
+  margin-top: 5px;
+}
+
+.dropdown-item {
+  color: #cc9933;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(204,153,51,0.1);
+}
+
+.admin-login-button, .logout-button {
+  background-color: #cc9933;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-family: 'Cormorant Garamond', serif;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.admin-login-button:hover, .logout-button:hover {
+  background-color: #b3862b;
+}
+
+.arts-dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.dropdown-button {
+  background-color: #cc9933;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+  height: fit-content;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.dropdown-button:hover {
+  background-color: #a67c00;
+}
+
+.dropdown-content {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: white;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  margin-top: 5px;
+  z-index: 1001;
+}
+
+.dropdown-content a {
+  color: #cc9933;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: rgba(204,153,51,0.1);
+}
+
+.dropdown-content::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: 20px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid white;
+}
+
+.arts-dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.dropdown-button {
+  background-color: #cc9933;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.9em;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dropdown-button:hover {
+  background-color: #a67c00;
+  transform: translateY(-1px);
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  min-width: 180px;
+  box-shadow: 0 4px 15px rgba(204,153,51,0.15);
+  border-radius: 5px;
+  z-index: 1000;
+  margin-top: 5px;
+  animation: fadeIn 0.2s ease-in-out;
+  border: 1px solid rgba(204,153,51,0.1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-content a {
+  color: #cc9933;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.dropdown-content a:hover {
+  background-color: rgba(204,153,51,0.1);
+}
+
+.dropdown-content a:first-child {
+  border-radius: 5px 5px 0 0;
+}
+
+.dropdown-content a:last-child {
+  border-radius: 0 0 5px 5px;
+}

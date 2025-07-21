@@ -1,0 +1,2 @@
+Please replace this file with your actual intro video (intro.mp4).
+The video should be in MP4 format and placed in this directory.
