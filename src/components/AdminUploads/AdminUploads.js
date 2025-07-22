@@ -30,14 +30,42 @@ const AdminUploads = () => {
     }
   };
 
-  const confirmDelete = (art) => {
-    setSelectedArt(art);
-    setShowConfirmation(true);
-  };
 
-  const cancelDelete = () => {
-    setSelectedArt(null);
-    setShowConfirmation(false);
+
+  const toggleVisibility = async (artToToggle) => {
+    // Optimistically update the UI
+    setArts(arts.map(art => 
+      art.id === artToToggle.id ? { ...art, is_visible: !art.is_visible } : art
+    ));
+
+    console.log('Attempting to toggle visibility for:', artToToggle.name, 'from', artToToggle.is_visible, 'to', !artToToggle.is_visible);
+    console.log('Before Supabase update, art.is_visible:', artToToggle.is_visible);
+
+    try {
+      const { error } = await supabase
+        .from('arts')
+        .update({ is_visible: !artToToggle.is_visible })
+        .eq('id', artToToggle.id);
+
+      if (error) {
+        // If the update fails, revert the UI change
+        setArts(arts.map(art => 
+          art.id === artToToggle.id ? { ...art, is_visible: artToToggle.is_visible } : art
+        ));
+        throw error;
+      } 
+
+      setMessage(`Art "${artToToggle.name}" visibility updated.`);
+      console.log('Supabase update successful for:', artToToggle.name);
+      console.log('After Supabase update, new is_visible state:', !artToToggle.is_visible);
+
+    } catch (error) {
+      console.error('Supabase update failed with error:', error);
+      console.log('Reverting UI and re-fetching arts due to error.');
+      setMessage('Error updating art visibility. Please try again.');
+      // Fetch from server to ensure UI consistency after an error
+      fetchArts(); 
+    }
   };
 
   const handleDelete = async (art) => {
@@ -68,6 +96,16 @@ const AdminUploads = () => {
     }
   };
 
+  const confirmDelete = (art) => {
+    setSelectedArt(art);
+    setShowConfirmation(true);
+  };
+
+  const cancelDelete = () => {
+    setSelectedArt(null);
+    setShowConfirmation(false);
+  };
+
   if (loading) {
     return <div className="admin-uploads-container">Loading...</div>;
   }
@@ -93,6 +131,12 @@ const AdminUploads = () => {
             >
               Delete
             </button>
+            <div className="visibility-toggle" onClick={() => toggleVisibility(art)}>
+              <div className={`switch ${art.is_visible ? 'on' : 'off'}`}>
+                <div className="slider"></div>
+              </div>
+              <span className='toggle-label'>{art.is_visible ? 'Visible' : 'Hidden'}</span>
+            </div>
           </div>
         ))}
       </div>

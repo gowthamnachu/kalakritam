@@ -11,6 +11,7 @@ import DashboardHeader from './components/DashboardHeader/DashboardHeader';
 import Arts from './components/Arts/Arts';
 import Events from './components/Events/Events';
 import AboutUs from './components/AboutUs/AboutUs';
+import Footer from './components/Footer/Footer';
 import './App.css';
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
                 <Route path="/admin-arts" element={<ProtectedRoute><AdminArts /></ProtectedRoute>} />
                 <Route path="/admin-uploads" element={<ProtectedRoute><AdminUploads /></ProtectedRoute>} />
               </Routes>
+              <Footer />
             </>
           } />
         </Routes>

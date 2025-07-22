@@ -129,6 +129,7 @@
   gap: 15px;
   margin-left: auto;
   height: 100%;
+  flex-direction: row-reverse;
 }
 
 .arts-dropdown, .menu-dropdown {

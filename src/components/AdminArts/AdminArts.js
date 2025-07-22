@@ -110,7 +110,8 @@ const AdminArts = () => {
           name: newArt.name,
           description: newArt.description,
           artist: newArt.artist,
-          image_url: imageUrl
+          image_url: imageUrl,
+          is_visible: true // Set to true by default
         }])
         .select();
 

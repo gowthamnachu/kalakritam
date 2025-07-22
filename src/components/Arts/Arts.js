@@ -16,6 +16,7 @@ const Arts = () => {
       const { data, error } = await supabase
         .from('arts')
         .select('*')
+        .eq('is_visible', true) // Only fetch arts that are visible
         .order('created_at', { ascending: false });
 
       if (error) throw error;

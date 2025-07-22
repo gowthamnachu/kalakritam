@@ -128,11 +128,9 @@ const DashboardHeader = () => {
                 </div>
               )}
             </div>
-            <Link to="/admin" className="admin-login-button">
-              Admin Login
-            </Link>
           </div>
         )}
+
       </div>
     </header>
   );

@@ -1,0 +1,50 @@
+.footer-container {
+    background: linear-gradient(45deg, rgba(255,255,255,0.9) 0%, rgba(204,153,51,0.1) 100%);
+    backdrop-filter: blur(5px);
+    border-top: 1px solid rgba(204,153,51,0.3);
+    color: #cc9933;
+    padding: 10px 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Add some padding to the sides */
+}
+
+.footer-content p {
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1em;
+}
+
+.admin-login-button-footer {
+    margin-left: auto; /* Pushes the button to the right */
+}
+
+.admin-login-button-footer {
+    background-color: #cc9933;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-family: 'Cormorant Garamond', serif;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.admin-login-button-footer:hover {
+    background-color: #b3862b;
+}
